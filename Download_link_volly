@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Download</title>
+</head>
+<body>
+    <h1>Silahkan Tunggu...</h1>
+    <p>Link download akan muncul dalam <span id="countdown">10</span> detik.</p>
+    <a href="#" id="downloadLink" style="display:none;">Download Sekarang</a>
+
+    <script>
+        var seconds = 10;
+        var countdownElement = document.getElementById('countdown');
+        var downloadLink = document.getElementById('downloadLink');
+
+        function countdown() {
+            countdownElement.textContent = seconds;
+            seconds--;
+            if (seconds < 0) {
+                clearInterval(timer);
+                downloadLink.style.display = 'block';
+                countdownElement.style.display = 'none';
+            }
+        }
+
+        var timer = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
